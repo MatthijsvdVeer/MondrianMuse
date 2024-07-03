@@ -32,8 +32,8 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       run: | 
         python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
-        cat meditation.txt
-    - name: Publish the meditation
+        cat abstract.txt
+    - name: Publish the abstract
       uses: actions/upload-artifact@v4
       with:
         name: abstract
