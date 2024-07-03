@@ -28,5 +28,5 @@ if __name__ == "__main__":
    parser.add_argument("--answers", default="", help="The answers to the questions for the session.")
    args = parser.parse_args()
 
-   result = flow_entry(topic=args.topic)
+   result = flow_entry(topic=args.answers)
    print(result)

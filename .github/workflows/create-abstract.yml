@@ -10,7 +10,7 @@ on:
         default: 'true'
 
 jobs:
-  generate-meditation:
+  generate-abstract:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4

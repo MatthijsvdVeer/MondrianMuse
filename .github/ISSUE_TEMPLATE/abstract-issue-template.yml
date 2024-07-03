@@ -9,7 +9,7 @@ body:
     attributes:
       label: "1. Who do you think this talk is for?"
       description: Identify the target audience for this talk.
-      placeholder: "People interested in personal growth through meditation."
+      placeholder: "Developers, Consultants, Data Scientists, etc."
     validations:
       required: true
   - type: textarea
@@ -17,7 +17,7 @@ body:
     attributes:
       label: "2. What do you think you'll learn from this talk?"
       description: Describe what knowledge or skills you expect to gain.
-      placeholder: "Techniques for cultivating gratitude in daily life."
+      placeholder: "This talk will get you started with Azure OpenAI. You will learn how to use the API to generate text."
     validations:
       required: true
   - type: textarea
@@ -25,7 +25,7 @@ body:
     attributes:
       label: "3. What's something you'll be able to accomplish with the information gained from this talk?"
       description: Explain how you can apply the information from this talk.
-      placeholder: "Implementing a daily gratitude practice."
+      placeholder: "You will be able to generate text using the Azure OpenAI API."
     validations:
       required: true
   - type: textarea
@@ -33,6 +33,6 @@ body:
     attributes:
       label: "4. What is the two-sentence summary of the talk?"
       description: Provide a brief summary of the talk's content.
-      placeholder: "This talk explores the concept of gratitude as a transformative tool. Learn practical strategies for integrating gratitude into your life."
+      placeholder: "This talk will introduce you to the Azure OpenAI API and show you how to generate text using the API."
     validations:
       required: true
