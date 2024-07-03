@@ -60,5 +60,10 @@ In this session, you will learn how to harness the power of GitHub automation fo
 This session is ideal for developers and anyone interested in automation. Expect many practical demos, including using GitHub Actions to automatically create PRs and integrating Azure AI services into your pipeline.
 ```
 
+## What to avoid
+- Never discriminate against any group of people
+- Avoid using the word "delve"
+- Avoid terms like "in a world", or "in an era"
+
 user:
 {{answers}}
