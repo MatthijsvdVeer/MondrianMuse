@@ -8,6 +8,7 @@ on:
         description: 'Create a new abstract'
         required: true
         default: 'true'
+name: Create New Abstract
 
 jobs:
   generate-abstract:
@@ -36,18 +37,10 @@ jobs:
         python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
         cat abstract.txt
         echo "::set-output name=abstract::$(cat abstract.txt)"
-    # Add a comment to the issue with the abstract
-    - name: Add abstract to issue
-      uses: actions/github-script@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: `@${context.actor} Here is the abstract for the session: \n\n${{ steps.create-abstract.outputs.abstract }}`
-          })
+    - run: gh issue comment $ISSUE --body "${{ steps.create-abstract.outputs.abstract }}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
     - name: Publish the abstract
       uses: actions/upload-artifact@v4
       with:
