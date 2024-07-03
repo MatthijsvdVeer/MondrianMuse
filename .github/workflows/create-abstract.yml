@@ -10,6 +10,8 @@ on:
         default: 'true'
 name: Create New Abstract
 
+permissions:
+  issues: write
 jobs:
   generate-abstract:
     runs-on: ubuntu-latest
