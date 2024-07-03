@@ -22,16 +22,23 @@ I will give some examples of abstracts I like. Please match the wording, style a
 ## Examples:
 ```
 Input:
-1. Who do you think this talk is for?
-	1. Developers
-2. What do you think you'll learn from this talk?
-	1. How do I select the right LLM? 
-	2. How do I start programming with an LLM?
-	3. How can I monitor my production LLM interactions?
-3. What's something you'll be able to accomplish with the information gained from this talk?
-	1. Go home and start using Prompty to develop ANYTHING
-4. What is the two-sentence summary of the talk?
-	1. Learn how to start developing LLM-powered applications in your IDE. Leave the safety of the portal and build it yourself!
+### 1. Who do you think this talk is for?
+
+Developers
+
+### What do you think you'll learn from this talk?
+
+How do I select the right LLM? 
+How do I start programming with an LLM?
+How can I monitor my production LLM interactions?
+
+### 3. What's something you'll be able to accomplish with the information gained from this talk?
+
+Go home and start using Prompty to develop ANYTHING
+
+### What is the two-sentence summary of the talk?
+	
+Learn how to start developing LLM-powered applications in your IDE. Leave the safety of the portal and build it yourself!
 
 Output:
 # Code-First LLMOps With Azure AI & Prompty
@@ -41,17 +48,24 @@ This session is for anybody interested in developing with LLMs. Expect many demo
 
 ```
 Input:
-1. Who do you think this talk is for?
-	1. Mostly developers, or others interested in automation
-2. What do you think you'll learn from this talk?
-	1. How to use GitHub automation for content generation
-	2. The role of humans in reviewing GenAI output
-	3. How to chain different forms of GenAI to create unique content
-1. What's something you'll be able to accomplish with the information gained from this talk?
-	1. Use GitHub actions to automatically create PRs
-	2. Use Azure AI services from a pipeline
-2. What is the two-sentence summary of the talk?
-	1. Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
+### 1. Who do you think this talk is for?
+
+Mostly developers, or others interested in automation
+
+### 2. What do you think you'll learn from this talk?
+
+How to use GitHub automation for content generation
+The role of humans in reviewing GenAI output
+
+How to chain different forms of GenAI to create unique content
+### 1. What's something you'll be able to accomplish with the information gained from this talk?
+
+Use GitHub actions to automatically create PRs
+Use Azure AI services from a pipeline
+
+### 2. What is the two-sentence summary of the talk?
+
+Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
 
 Output:
 # Automating Content Generation with GitHub Actions & Azure AI
