@@ -4,7 +4,7 @@ on:
     types: [opened]
   workflow_dispatch:
     inputs:
-      meditation:
+      answers:
         description: 'Create a new abstract'
         required: true
         default: 'true'
