@@ -26,8 +26,10 @@ jobs:
     - name: Azure login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.COMMITCALM_AZURE_CREDENTIALS }}
+        creds: ${{ secrets.MONDRIANMUSE_AZURE_CREDENTIALS }}
     - name: Create an abstract
+      env:
+        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       run: | 
         python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
         cat meditation.txt
