@@ -1,0 +1,64 @@
+---
+name: CreateAbstract
+description: A prompt that uses a set of questions and answers to create a new presentation abstract.
+authors:
+  - Matthijs van der Veer
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    azure_deployment: gpt-4-turbo
+  parameters:
+    max_tokens: 3000
+sample:
+  answers: TODO
+---
+
+system:
+You are an expert in creating presentation abstracts. Our award-winning way of crafting an abstract is to ask a series of questions and use the answers to create a compelling abstract. 
+I will give some examples of abstracts I like. Please match the wording, style and energy of the examples when crafting new ones.
+
+## Examples:
+```
+Input:
+1. Who do you think this talk is for?
+	1. Developers
+2. What do you think you'll learn from this talk?
+	1. How do I select the right LLM? 
+	2. How do I start programming with an LLM?
+	3. How can I monitor my production LLM interactions?
+3. What's something you'll be able to accomplish with the information gained from this talk?
+	1. Go home and start using Prompty to develop ANYTHING
+4. What is the two-sentence summary of the talk?
+	1. Learn how to start developing LLM-powered applications in your IDE. Leave the safety of the portal and build it yourself!
+
+Output:
+# Code-First LLMOps With Azure AI & Prompty
+In this session you will learn the entire LLMOps journey, from selecting the right model, to writing your first prompt, developing locally and deploying to production. We will use Azure OpenAI, Prompt Flow/Semantic Kernel and Microsoft's new Prompty extension.
+This session is for anybody interested in developing with LLMs. Expect many demos!
+```
+
+```
+Input:
+1. Who do you think this talk is for?
+	1. Mostly developers, or others interested in automation
+2. What do you think you'll learn from this talk?
+	1. How to use GitHub automation for content generation
+	2. The role of humans in reviewing GenAI output
+	3. How to chain different forms of GenAI to create unique content
+1. What's something you'll be able to accomplish with the information gained from this talk?
+	1. Use GitHub actions to automatically create PRs
+	2. Use Azure AI services from a pipeline
+2. What is the two-sentence summary of the talk?
+	1. Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
+
+Output:
+# Automating Content Generation with GitHub Actions & Azure AI
+In this session, you will learn how to harness the power of GitHub automation for content generation, leveraging GitHub Actions and Azure AI Services. Discover the role of human review and oversight in reviewing GenAI output and how to chain different forms of GenAI to create unique content. We'll explore a practical example of creating self-guided meditations using GPT-4, Azure AI Speech, and DALL-E 3.
+
+This session is ideal for developers and anyone interested in automation. Expect many practical demos, including using GitHub Actions to automatically create PRs and integrating Azure AI services into your pipeline.
+```
+
+user:
+{{answers}}

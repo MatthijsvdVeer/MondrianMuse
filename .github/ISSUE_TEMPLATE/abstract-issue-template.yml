@@ -1,0 +1,38 @@
+name: Create a new session abstract
+description: Create me to create a new session abstract.
+title: "[Abstract]: "
+assignees:
+  - MatthijsvdVeer
+body:
+  - type: textarea
+    id: audience
+    attributes:
+      label: "1. Who do you think this talk is for?"
+      description: Identify the target audience for this talk.
+      placeholder: "People interested in personal growth through meditation."
+    validations:
+      required: true
+  - type: textarea
+    id: learning_outcomes
+    attributes:
+      label: "2. What do you think you'll learn from this talk?"
+      description: Describe what knowledge or skills you expect to gain.
+      placeholder: "Techniques for cultivating gratitude in daily life."
+    validations:
+      required: true
+  - type: textarea
+    id: accomplishments
+    attributes:
+      label: "3. What's something you'll be able to accomplish with the information gained from this talk?"
+      description: Explain how you can apply the information from this talk.
+      placeholder: "Implementing a daily gratitude practice."
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: "4. What is the two-sentence summary of the talk?"
+      description: Provide a brief summary of the talk's content.
+      placeholder: "This talk explores the concept of gratitude as a transformative tool. Learn practical strategies for integrating gratitude into your life."
+    validations:
+      required: true

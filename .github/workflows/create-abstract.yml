@@ -1,0 +1,38 @@
+# do this when a new issue is created
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      meditation:
+        description: 'Create a new abstract'
+        required: true
+        default: 'true'
+
+jobs:
+  generate-meditation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    # TODO: Replace with OIDC
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.COMMITCALM_AZURE_CREDENTIALS }}
+    - name: Create an abstract
+      run: | 
+        python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
+        cat meditation.txt
+    - name: Publish the meditation
+      uses: actions/upload-artifact@v4
+      with:
+        name: abstract
+        path: abstract.txt
