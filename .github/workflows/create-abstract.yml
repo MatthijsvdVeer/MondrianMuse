@@ -2,12 +2,6 @@
 on:
   issues:
     types: [opened]
-  workflow_dispatch:
-    inputs:
-      answers:
-        description: 'Create a new abstract'
-        required: true
-        default: 'true'
 name: Create New Abstract
 
 permissions:
@@ -50,8 +44,7 @@ jobs:
       run: | 
         python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
         cat abstract.txt
-        echo "::set-output name=abstract::$(cat abstract.txt)"
-    - run: gh issue comment $ISSUE --body "${{ steps.create-abstract.outputs.abstract }}"
+    - run: gh issue comment $ISSUE --body "$(cat abstract.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
