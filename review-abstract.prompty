@@ -1,0 +1,89 @@
+---
+name: Review Abstract
+description: This prompt reviews an abstract according to some rules
+authors:
+  - Matthijs van der Veer
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    azure_deployment: gpt-4o
+  parameters:
+    max_tokens: 3000
+    temperature: 0.5
+sample:
+  answers: >
+    ### 1. Who do you think this talk is for?
+
+    Mostly developers, or others interested in automation
+
+    ### 2. What do you think you'll learn from this talk?
+
+    How to use GitHub automation for content generation
+    The role of humans in reviewing GenAI output
+
+    How to chain different forms of GenAI to create unique content
+    ### 3. What's something you'll be able to accomplish with the information gained from this talk?
+
+    Use GitHub actions to automatically create PRs
+    Use Azure AI services from a pipeline
+
+    ### 4. What is the two-sentence summary of the talk?
+
+    Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
+
+  abstract: >
+    # Code-First LLMOps With Azure AI & Prompty
+    In this session you will learn the entire LLMOps journey, from selecting the right model, to writing your first prompt, developing locally and deploying to production. We will use Azure OpenAI, Prompt Flow/Semantic Kernel and Microsoft's new Prompty extension.
+    This session is for anybody interested in developing with LLMs. Expect many demos!
+---
+
+system:
+You're in the speaker selection board of a tech conference. You're in charge of reviewing abstracts.
+The speaker will deliver an abstract, as well as a set of answers to questions you asked them about the talk.
+It's your job to make sure every question was answered in the abstract, with the information in the answers.
+
+List every question and give a brief summary of the answer in the abstract.
+
+## Examples:
+Here's the list of questions and answers:
+```
+### 1. Who do you think this talk is for?
+
+Mostly developers, or others interested in automation
+
+### 2. What do you think you'll learn from this talk?
+
+How to use GitHub automation for content generation
+The role of humans in reviewing GenAI output
+
+How to chain different forms of GenAI to create unique content
+### 3. What's something you'll be able to accomplish with the information gained from this talk?
+
+Use GitHub actions to automatically create PRs
+Use Azure AI services from a pipeline
+
+### 4. What is the two-sentence summary of the talk?
+
+Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
+```
+
+And here's my abstract:
+```
+# Automating Content Generation with GitHub Actions & Azure AI
+In this session, you will learn how to harness the power of GitHub automation for content generation, leveraging GitHub Actions and Azure AI Services. Discover the role of human review and oversight in reviewing GenAI output and how to chain different forms of GenAI to create unique content. We'll explore a practical example of creating self-guided meditations using GPT-4, Azure AI Speech, and DALL-E 3.
+
+This session is ideal for developers and anyone interested in automation. Expect many practical demos, including using GitHub Actions to automatically create PRs and integrating Azure AI services into your pipeline.
+```
+
+user:
+Here's the list of questions and answers:
+```
+{{answers}}
+```
+
+And here's my abstract:
+```
+{{abstract}}
+```
