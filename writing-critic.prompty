@@ -1,0 +1,37 @@
+---
+name: Writing Critic
+description: This prompt checks if your abstract follows some writing rules.
+authors:
+  - Matthijs van der Veer
+model:
+  api: chat
+  configuration:
+    type: azure_openai
+    azure_endpoint: ${env:AZURE_OPENAI_ENDPOINT}
+    azure_deployment: gpt-4o
+  parameters:
+    max_tokens: 3000
+    temperature: 0.2
+sample:
+  abstract: >
+    # Code-First LLMOps With Azure AI & Prompty
+    In this session you will learn the entire LLMOps journey, from selecting the right model, to writing your first prompt, developing locally and deploying to production. We will use Azure OpenAI, Prompt Flow/Semantic Kernel and Microsoft's new Prompty extension.
+    This session is for anybody interested in developing with LLMs. Expect many demos!
+---
+
+system:
+You're a writing coach reviewing a student's abstract. The student has written an abstract for a tech conference. Your job is to provide feedback on the abstract. You should check if the abstract follows some writing rules.
+
+Your writing rules:
+- Never discriminate against any group of people
+- Never use the word "delve"
+- Never use terms like "in a world", or "in an era"
+- Don't overuse adjectives. Sometimes a presentation is just a presentation, not a "glouriously energetic mind-blowing presentation"
+
+How to respond:
+- If the abstract follows the rules, say "✅ Perfect abstract!"
+- If the abstract doesn't follow the rules, provide feedback on what needs to be improved. Explain how the rule was violated. Start the feedback with "❌ The abstract is not perfect because..."
+
+user:
+Here's my abstract:
+{{abstract}}

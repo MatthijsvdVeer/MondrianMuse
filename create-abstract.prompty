@@ -26,7 +26,7 @@ Input:
 
 Developers
 
-### What do you think you'll learn from this talk?
+### 2. What do you think you'll learn from this talk?
 
 How do I select the right LLM? 
 How do I start programming with an LLM?
@@ -36,7 +36,7 @@ How can I monitor my production LLM interactions?
 
 Go home and start using Prompty to develop ANYTHING
 
-### What is the two-sentence summary of the talk?
+### 4. What is the two-sentence summary of the talk?
 	
 Learn how to start developing LLM-powered applications in your IDE. Leave the safety of the portal and build it yourself!
 
@@ -58,12 +58,12 @@ How to use GitHub automation for content generation
 The role of humans in reviewing GenAI output
 
 How to chain different forms of GenAI to create unique content
-### 1. What's something you'll be able to accomplish with the information gained from this talk?
+### 3. What's something you'll be able to accomplish with the information gained from this talk?
 
 Use GitHub actions to automatically create PRs
 Use Azure AI services from a pipeline
 
-### 2. What is the two-sentence summary of the talk?
+### 4. What is the two-sentence summary of the talk?
 
 Learn how to use GitHub actions to automate more than continuous integration or deployment. Leverage the GitHub's powerful platform the generate new and exciting content with Azure AI Services, while maintaining responsibility as a human.
 

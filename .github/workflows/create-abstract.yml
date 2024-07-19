@@ -37,7 +37,7 @@ jobs:
       with:
         creds: ${{ secrets.MONDRIANMUSE_AZURE_CREDENTIALS }}
     # Create abstract and set the step output to the abstract
-    - name: Create an abstract
+    - name: 📝 Create an abstract
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       run: | 
@@ -46,12 +46,21 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
-    - name: Review the abstract
+    - name: 🔍 Review the abstract
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       run: | 
         python review-abstract_promptflow.py --answers "${{ github.event.issue.body }}" --abstract "$(cat abstract.txt)" > review.txt
     - run: gh issue comment $ISSUE --body "$(cat review.txt)"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}
+    - name: 🧐 Critique the abstract
+      env:
+        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      run: | 
+        python writing-critic_promptflow.py --abstract "$(cat abstract.txt)" > critique.txt
+    - run: gh issue comment $ISSUE --body "$(cat critique.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
