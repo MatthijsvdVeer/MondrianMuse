@@ -20,6 +20,7 @@ permissions:
 
 jobs:
   generate-abstract:
+    if: contains(github.event.issue.labels,'abstract')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
