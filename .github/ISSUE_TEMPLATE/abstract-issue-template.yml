@@ -2,8 +2,6 @@ name: Create a new session abstract
 description: Create me to create a new session abstract.
 title: "[Abstract]: "
 labels: ["abstract"]
-assignees:
-  - MatthijsvdVeer
 body:
   - type: textarea
     id: audience
