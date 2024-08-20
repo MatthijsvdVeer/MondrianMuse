@@ -36,6 +36,7 @@ jobs:
             echo "User $user is not allowed to create abstracts"
             gh issue close ${{ github.event.issue.number }} --comment "Issue closed: User $user is not allowed to create abstracts"
             exit 1
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
