@@ -60,7 +60,10 @@ jobs:
         creds: ${{ secrets.MONDRIANMUSE_AZURE_CREDENTIALS }}
     # Escape double quotes in the issue body and set it as an environment variable
     - name: Escape double quotes
-      run: echo "ESCAPED_ISSUE_BODY=$(echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g')" >> $GITHUB_ENV
+      run: |
+        echo "ESCAPED_ISSUE_BODY<<EOF" >> $GITHUB_ENV
+        echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g' >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
     # Create abstract and set the step output to the abstract
     - name: 📝 Create an abstract
       env:
