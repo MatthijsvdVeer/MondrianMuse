@@ -58,12 +58,16 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.MONDRIANMUSE_AZURE_CREDENTIALS }}
+    # Escape double quotes in the issue body and set it as an environment variable
+    - name: Escape double quotes
+      run: echo "ESCAPED_ISSUE_BODY=$(echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g')" >> $GITHUB_ENV
     # Create abstract and set the step output to the abstract
     - name: 📝 Create an abstract
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        python create-abstract_promptflow.py --answers "${{ github.event.issue.body }}" > abstract.txt
+        python create-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" > abstract.txt
     - run: gh issue comment $ISSUE --body "$(cat abstract.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -71,8 +75,9 @@ jobs:
     - name: 🔍 Review the abstract
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        python review-abstract_promptflow.py --answers "${{ github.event.issue.body }}" --abstract "$(cat abstract.txt)" > review.txt
+        python review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat abstract.txt)" > review.txt
     - run: gh issue comment $ISSUE --body "$(cat review.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
