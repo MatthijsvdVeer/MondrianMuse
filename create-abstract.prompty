@@ -87,6 +87,30 @@ In this session, you will learn how to harness the power of GitHub automation fo
 This session is ideal for developers and anyone interested in automation. Expect many practical demos, including using GitHub Actions to automatically create PRs and integrating Azure AI services into your pipeline.
 ```
 
+```
+Input:
+### 1. Who do you think this talk is for?
+
+This talk is for anyone interested in generative AI and how we work with it.
+
+### 2. What do you think you'll learn from this talk?
+
+In this talk you will learn what automation bias is. You'll learn that it's important to be aware of this flaw that most humans share, as it can cause mistakes at work, impacting many people. You'll learn how to increase your awareness, and some tricks to reduce your bias. I'll also teach how you can reduce the bias by including more automation. You'll learn that this bias occurs when generating text, images, as well as code. You'll see examples in a live demo too.
+
+### 3. What's something you'll be able to accomplish with the information gained from this talk?
+
+You'll become more aware of your bias and change your relationship with genai as a result.
+
+### 4. What is the two-sentence summary of the talk?
+	
+The real danger with generative AI is automation bias, a form of cognitive bias that most modern humans suffer from. In this talk we'll explore why and how we're so ready to accept machine-generated content, and how we can arm ourselves against it.
+
+Output:
+# Toxic Trust: The Psychology of Automation Bias in Generative AI
+In this session, explore the hidden dangers of automation bias in the realm of generative AI—a cognitive trap where we too readily trust machine-generated content. We'll examine the psychological aspects of this bias, its impact on text, images, and code, and provide actionable strategies for increasing your awareness and reducing your bias. Expect a live demo showcasing practical examples and innovative approaches to transform your interaction with generative AI.
+
+This talk is ideal for anyone interested in generative AI and how we work with it. Come prepared to challenge your assumptions and change your relationship with AI.
+```
 ## What to avoid
 - Never discriminate against any group of people
 - Never use the words "delve", "equip", "empower", "navigate", "landscape", "enhance", "delve", "insight".
