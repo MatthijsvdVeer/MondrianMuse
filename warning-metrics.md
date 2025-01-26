@@ -1,6 +1,6 @@
 # ⚠️ Warning
 
-The model used for generating this abstract (GPT-4o) has flaws, always check the output.
+The model used for generating this abstract (GPT-4o) has flaws, always check the output. Below are the metrics for the model, they do not apply to the individual abstracts generated.
 
 - Accuracy: 0.89 (maximum 1)[^1]
 - Groundedness: 4.09[^2]
