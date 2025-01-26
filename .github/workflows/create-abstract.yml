@@ -94,4 +94,8 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
-      
+    - name: 📄 Post warning metrics
+      run: gh issue comment $ISSUE --body "$(cat warning-metrics.md)"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ISSUE: ${{ github.event.issue.html_url }}

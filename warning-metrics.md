@@ -2,7 +2,7 @@
 
 The model used for generating this abstract (GPT-4o) has flaws, always check the output.
 
-- Accuracy: 0.89[^1]
+- Accuracy: 0.89 (maximum 1)[^1]
 - Groundedness: 4.09[^2]
 - Relevance: 4.19[^3]
 
