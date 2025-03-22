@@ -1,0 +1,3 @@
+In this engaging session, you'll discover how to flip the traditional GitHub workflow on its head by creating pull requests (PRs) within a workflow instead of the other way around. This unique approach allows you to streamline your development process and automate your contributions with flair—yes, it's as magical as it sounds!
+
+Ideal for developers looking to innovate their workflows, this talk will arm you with the skills to implement this technique in your own projects. Get ready to transform your GitHub experience and bring a touch of magic to your coding practices!
