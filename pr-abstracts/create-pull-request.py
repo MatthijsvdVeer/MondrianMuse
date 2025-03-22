@@ -9,6 +9,23 @@ from promptflow.core import tool, Prompty
 
 folder = Path(__file__).parent.absolute().as_posix()
 
+@tool
+def flow_entry(    
+      answers: any
+) -> str:
+  # path to prompty (requires absolute path for deployment)
+  path_to_prompty = folder + "/create-abstract.prompty"
+
+  # load prompty as a flow
+  flow = Prompty.load(path_to_prompty)
+ 
+  # execute the flow as function
+  result = flow(
+    answers = answers
+  )
+
+  return result
+
 def sanitize_filename(title):
    # Remove emojis and special characters
    title = re.sub(r'[^\w\s-]', '', title)
@@ -29,11 +46,12 @@ def run_command(command):
 
 if __name__ == "__main__":
    parser = argparse.ArgumentParser()
-   parser.add_argument("--abstract", default="", help="The abstract in JSON format.")
+   parser.add_argument("--answers", default="", help="The answers to the questions for the session.")
    args = parser.parse_args()
    
    # Parse the JSON result
-   parsed_result = json.loads(args.abstract)
+   result = flow_entry(answers=args.answers)
+   parsed_result = json.loads(result)
    
    # Extract title and abstract
    title = parsed_result.get("title", "")

@@ -64,20 +64,15 @@ jobs:
         echo "ESCAPED_ISSUE_BODY<<EOF" >> $GITHUB_ENV
         echo "${{ github.event.issue.body }}" | sed 's/"/\\"/g' >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
-    # Create abstract and set the step output to the abstract
-    - name: 📝 Create an abstract
-      env:
-        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
-        ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
-      run: | 
-        python pr-abstracts/create-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" | tee abstract.json
     - name: ✨ Create a pull request
       id: create_pr
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
         set -e
-        python pr-abstracts/create-pull-request.py --abstract "$(cat abstract.json)" | tee output.log
+        python pr-abstracts/create-pull-request.py --answers "$ESCAPED_ISSUE_BODY" | tee output.log
         PR_URL=$(grep "^PR_URL=" output.log | cut -d'=' -f2)
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
     - name: 💬 Update the issue
