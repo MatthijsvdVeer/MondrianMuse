@@ -102,7 +102,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
       run: | 
-        python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat abstract.txt)" > critique.txt
+        python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat $FILE_PATH)" > critique.txt
         gh pr comment $PR_ID --body "$(cat critique.txt)"
     - name: ⚠️ Post warning metrics
       run: gh pr comment $PR_ID --body "$(cat issue-based-abstracts/warning-metrics.md)"
