@@ -76,7 +76,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
-        python pr-abstracts/create-pull-request.py --abstract "$(cat abstract.txt)" | tee output.log
+        python pr-abstracts/create-pull-request.py --abstract "$(cat abstract.txt | sed 's/"/\\"/g')" | tee output.log
         PR_URL=$(grep "^PR_URL=" output.log | cut -d'=' -f2)
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
     - name: 💬 Update the issue
