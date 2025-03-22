@@ -27,7 +27,7 @@ jobs:
       # Get the github handle of the user and check it against the allowed_users.txt file
       - name: Get the user
         id: get_user
-        run: echo "::set-output name=user::${{ github.event.issue.user.login }}"
+        run: echo "user=${{ github.event.issue.user.login }}" >> $GITHUB_OUTPUT
       - name: Check user access
         id: check_user
         run: |
