@@ -51,6 +51,7 @@ if __name__ == "__main__":
    
    # Parse the JSON result
    result = flow_entry(answers=args.answers)
+   print(type(result))
    parsed_result = json.loads(result)
    
    # Extract title and abstract
