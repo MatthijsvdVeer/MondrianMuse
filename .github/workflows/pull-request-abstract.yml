@@ -94,7 +94,7 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
       run: | 
-        python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat $FILE_PATH)" > review.txt
+        python pr-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat $FILE_PATH)" > review.txt
         gh pr comment $PR_ID --body "$(cat review.txt)"
     - name: 🧐 Critique the abstract
       env:
@@ -103,10 +103,10 @@ jobs:
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
         FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
       run: | 
-        python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat $FILE_PATH)" > critique.txt
+        python pr-abstracts/writing-critic_promptflow.py --abstract "$(cat $FILE_PATH)" > critique.txt
         gh pr comment $PR_ID --body "$(cat critique.txt)"
     - name: ⚠️ Post warning metrics
-      run: gh pr comment $PR_ID --body "$(cat issue-based-abstracts/warning-metrics.md)"
+      run: gh pr comment $PR_ID --body "$(cat pr-abstracts/warning-metrics.md)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
