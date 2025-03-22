@@ -1,0 +1,3 @@
+In this engaging session, discover how OpenAI can revolutionize your grocery shopping experience. Learn practical tips on using LLMs to streamline your grocery list, optimize your purchases, and even get recommendations for your favorite recipes, so you can effortlessly grab a banana and some milk on your next trip.
+
+This talk is perfect for everyone looking to simplify their daily tasks. Join us to explore the future of shopping and see how AI can make your life easier!
