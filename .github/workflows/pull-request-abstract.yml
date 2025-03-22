@@ -71,7 +71,8 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        set -e
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
         python pr-abstracts/create-pull-request.py --answers "$ESCAPED_ISSUE_BODY" | tee output.log
         PR_URL=$(grep "^PR_URL=" output.log | cut -d'=' -f2)
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
