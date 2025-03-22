@@ -70,7 +70,7 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        python create-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" > abstract.txt
+        python issue-based-abstracts/create-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" > abstract.txt
     - run: gh issue comment $ISSUE --body "$(cat abstract.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -80,7 +80,7 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        python review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat abstract.txt)" > review.txt
+        python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat abstract.txt)" > review.txt
     - run: gh issue comment $ISSUE --body "$(cat review.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -89,13 +89,13 @@ jobs:
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
       run: | 
-        python writing-critic_promptflow.py --abstract "$(cat abstract.txt)" > critique.txt
+        python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat abstract.txt)" > critique.txt
     - run: gh issue comment $ISSUE --body "$(cat critique.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
     - name: 📄 Post warning metrics
-      run: gh issue comment $ISSUE --body "$(cat warning-metrics.md)"
+      run: gh issue comment $ISSUE --body "$(cat issue-based-abstracts/warning-metrics.md)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
