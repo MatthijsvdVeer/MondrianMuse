@@ -74,11 +74,26 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         python pr-abstracts/create-pull-request.py --answers "$ESCAPED_ISSUE_BODY" | tee output.log
+        FILE=$(grep "^FILE=" output.log | cut -d'=' -f2)
         PR_URL=$(grep "^PR_URL=" output.log | cut -d'=' -f2)
+        PR_ID=$(echo $PR_URL | cut -d'/' -f7)
+        echo "file_path=$FILE" >> $GITHUB_OUTPUT
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+        echo "pr_id=$PR_ID" >> $GITHUB_OUTPUT
     - name: 💬 Update the issue
       run: |
         gh issue comment $ISSUE --body "✅ Created pull request: ${{ steps.create_pr.outputs.pr_url }}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ISSUE: ${{ github.event.issue.html_url }}
+    - name: 🔍 Review the abstract
+      env:
+        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
+      run: | 
+        python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$FILE_PATH" > review.txt
+    - run: gh pr comment $PR_ID --body "$(cat review.txt)"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_ID: ${{ steps.create_pr.outputs.pr_id }}
+        FILE_PATH: ${{ steps.create_pr.outputs.file_path }}

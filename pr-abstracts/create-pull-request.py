@@ -74,7 +74,7 @@ if __name__ == "__main__":
    with open(file_path, "w") as f:
        f.write(abstract)
    
-   print(f"Created abstract file: {file_path}")
+   print(f"FILE={file_path}")
    
    # Get the repo root directory
    repo_root = Path(folder).parent.absolute()
