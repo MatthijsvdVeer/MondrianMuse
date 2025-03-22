@@ -90,10 +90,10 @@ jobs:
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
+        FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
       run: | 
-        python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$FILE_PATH" > review.txt
+        python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat FILE_PATH)" > review.txt
     - run: gh pr comment $PR_ID --body "$(cat review.txt)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
-        FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
