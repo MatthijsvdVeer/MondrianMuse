@@ -101,6 +101,7 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
+        FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
       run: | 
         python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat $FILE_PATH)" > critique.txt
         gh pr comment $PR_ID --body "$(cat critique.txt)"
