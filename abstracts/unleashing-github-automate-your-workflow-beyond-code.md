@@ -1,0 +1,3 @@
+In this session, discover the endless possibilities of automation within GitHub using issues and GitHub Actions. You'll learn how to streamline your workflow and automate processes, pushing the limits of what GitHub can do for you, from managing issues to enhancing team collaboration. Get ready to dive in and see how you can implement these strategies immediately.
+
+This talk is perfect for anyone eager to expand their GitHub knowledge. Leave with the tools and inspiration to automate your workflow right away!
