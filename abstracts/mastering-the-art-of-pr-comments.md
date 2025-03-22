@@ -1,0 +1,3 @@
+Join us for a straightforward session focused on the essential skill of commenting on Pull Requests (PRs). Learn the best practices for providing constructive feedback, tips for clear communication, and how to contribute to better code quality through your comments.
+
+This talk is perfect for everyone who enjoys engaging in the code review process. By the end of this session, you'll be ready to make meaningful contributions to PRs with confidence!
