@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   check-user-access:
-    if: contains(github.event.issue.labels.*.name, 'abstract')
+    if: contains(github.event.issue.labels.*.name, 'abstractV2')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -91,9 +91,21 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
         FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_ID: ${{ steps.create_pr.outputs.pr_id }}
       run: | 
         python issue-based-abstracts/review-abstract_promptflow.py --answers "$ESCAPED_ISSUE_BODY" --abstract "$(cat $FILE_PATH)" > review.txt
-    - run: gh pr comment $PR_ID --body "$(cat review.txt)"
+        gh pr comment $PR_ID --body "$(cat review.txt)"
+    - name: 🧐 Critique the abstract
+      env:
+        AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_ID: ${{ steps.create_pr.outputs.pr_id }}
+      run: | 
+        python issue-based-abstracts/writing-critic_promptflow.py --abstract "$(cat abstract.txt)" > critique.txt
+        gh pr comment $PR_ID --body "$(cat critique.txt)"
+    - name: ⚠️ Post warning metrics
+      run: gh pr comment $PR_ID --body "$(cat issue-based-abstracts/warning-metrics.md)"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PR_ID: ${{ steps.create_pr.outputs.pr_id }}
