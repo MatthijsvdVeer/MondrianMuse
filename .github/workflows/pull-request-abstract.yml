@@ -71,7 +71,7 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        PR_URL=$(python create-abstract/create-abstract_promptflow.py)
+        PR_URL=$(python pr-abstracts/create-abstract_promptflow.py)
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
     - name: 💬 Update the issue
       run: |
