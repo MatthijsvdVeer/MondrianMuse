@@ -108,6 +108,7 @@ if __name__ == "__main__":
    
    if pr_result:
        print(f"Successfully created pull request: {pr_result}")
+       print(f"PR_URL={pr_result}")  # Add this line to output the PR URL in an easily extractable format
    else:
        print("Failed to create pull request. You may need to create it manually.")
    

@@ -72,7 +72,8 @@ jobs:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
         ESCAPED_ISSUE_BODY: ${{ env.ESCAPED_ISSUE_BODY }}
       run: | 
-        PR_URL=$(python pr-abstracts/create-abstract_promptflow.py)
+        python pr-abstracts/create-pull-request.py --answers "$ESCAPED_ISSUE_BODY" | tee output.log
+        PR_URL=$(grep "^PR_URL=" output.log | cut -d'=' -f2)
         echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
     - name: 💬 Update the issue
       run: |
