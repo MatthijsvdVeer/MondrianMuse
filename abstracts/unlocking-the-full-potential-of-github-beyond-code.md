@@ -1,0 +1,3 @@
+In this session, discover the vast possibilities of automation with GitHub issues and Actions. You'll learn how to streamline your workflows and take your projects to the next level—because when it comes to GitHub, the sky's the limit!
+
+This talk is perfect for anyone eager to explore GitHub's capabilities. Get ready to dive in and leave with the skills to implement automation on your own right away!
