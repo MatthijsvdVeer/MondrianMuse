@@ -49,10 +49,8 @@ if __name__ == "__main__":
    parser.add_argument("--answers", default="", help="The answers to the questions for the session.")
    args = parser.parse_args()
    
-   # Parse the JSON result
-   result = flow_entry(answers=args.answers)
-   print(type(result))
-   parsed_result = json.loads(result)
+   # Get the result (which is already a dictionary)
+   parsed_result = flow_entry(answers=args.answers)
    
    # Extract title and abstract
    title = parsed_result.get("title", "")
