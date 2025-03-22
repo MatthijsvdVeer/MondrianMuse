@@ -1,0 +1,3 @@
+In this session, discover the vast potential of GitHub beyond just code building. Learn how to automate tasks using issues and GitHub Actions, pushing the limits of what you can achieve with this powerful platform. With practical examples and demonstrations, you'll gain the knowledge to implement these automations yourself right away!
+
+This talk is perfect for anyone eager to learn about GitHub. Get ready to explore and unleash the full capabilities of GitHub!
