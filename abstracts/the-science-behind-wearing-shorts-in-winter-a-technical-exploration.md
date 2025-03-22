@@ -1,0 +1,3 @@
+Join us for an intriguing session that explores the unconventional choice of wearing shorts in winter! We'll discuss the technical implications behind this phenomenon, shedding light on the reasons some people boldly embrace this style choice, and how it intersects with comfort, practicality, and even technology.
+
+This talk is for everyone curious about the quirky habits of human behavior. Expect a fun and informative discussion that will leave you with a clearer understanding of this fascinating topic!
