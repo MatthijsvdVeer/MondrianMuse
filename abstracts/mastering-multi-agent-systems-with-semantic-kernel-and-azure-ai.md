@@ -1,3 +1,0 @@
-In this session, you will discover how to effectively combine Semantic Kernel's Agent Framework with the Semantic Kernel Process Framework to build sophisticated multi-agent applications. Learn how agents can communicate to achieve greater results or when a more deterministic approach is necessary to prevent communication breakdowns. We will also cover adding tools to your agents, recognizing when to solicit human input, and leveraging Semantic Kernel with the Azure AI Agent Service.
-
-This talk is tailored for software engineers eager to dive into the world of agents. Expect engaging demos that will pave the way for you to build your first multi-agent application confidently!
