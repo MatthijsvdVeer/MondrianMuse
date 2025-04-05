@@ -1,0 +1,3 @@
+In this session, you'll discover how to effectively combine Semantic Kernel's Agent Framework with the Semantic Kernel Process Framework, enabling you to build powerful multi-agent applications. We'll explore the intricacies of agent communication, when to adopt a more deterministic approach, and how to integrate tools and human input to optimize performance. Expect live demos that will illustrate these concepts and provide clarity on building collaborative agents.
+
+This talk is tailored for software engineers interested in agent development. Walk away with the knowledge to start constructing your first multi-agent application and a deeper understanding of the collaborative capabilities of agents.
