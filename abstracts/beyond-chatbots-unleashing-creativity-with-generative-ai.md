@@ -1,0 +1,3 @@
+In this session, we will break free from the monotony of chatbot development and explore exciting and innovative applications of generative AI. Discover how to leverage LLMs, Image Generation, and AI Speech across various scenarios and why creating your own quirky tools and apps is the ultimate way to learn new technologies. Expect to leave with a wealth of inspiration for your next project and practical ideas that can be applied in real business contexts.
+
+This talk is tailor-made for developers tired of the same old solutions, as well as managers and product owners seeking fresh ideas. Join me in stepping out of the shadow of mediocrity and igniting your creativity!
