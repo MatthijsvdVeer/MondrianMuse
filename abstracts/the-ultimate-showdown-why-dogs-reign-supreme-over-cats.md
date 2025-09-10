@@ -1,0 +1,3 @@
+In this engaging session, you'll uncover the many differences between cats and dogs, leading to a clear conclusion on which species is truly the best. Prepare to leave ready to pledge your loyalty to dogs as we explore the characteristics that set them apart, and revel in the undeniable charm of our canine companions.
+
+This talk is perfect for pet lovers who find joy in discussing their furry friends. Join us for a fun-filled journey that will have you saying goodbye to cats and embracing the dog life!
