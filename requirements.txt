@@ -3,3 +3,4 @@ langchain_prompty
 promptflow
 azure.identity
 marshmallow==3.22.0
+spacy
