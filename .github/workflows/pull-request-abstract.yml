@@ -103,6 +103,13 @@ jobs:
         FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
       run: |
         python pr-abstracts/die-lemma.py --file "$FILE_PATH" --pr-id "$PR_ID" || true
+    - name: 🧩 Hyphen audit
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_ID: ${{ steps.create_pr.outputs.pr_id }}
+        FILE_PATH: ${{ steps.create_pr.outputs.file_path }}
+      run: |
+        python pr-abstracts/hyphen-check.py --file "$FILE_PATH" --pr-id "$PR_ID" || true
     - name: 🧐 Critique the abstract
       env:
         AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
