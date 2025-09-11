@@ -71,13 +71,15 @@ def main() -> int:
     lemmas = extract_lemmas(text)
     offenders = find_offenders(lemmas)
 
+    # Comment on the PR if PR id provided
+    pr_id = args.pr_id or os.environ.get("PR_ID")
+    
     if offenders:
         # Output list of offenders (JSON array for easy machine parsing)
         print(json.dumps(offenders, ensure_ascii=False))
-        # Comment on the PR if PR id provided
-        pr_id = args.pr_id or os.environ.get("PR_ID")
         if pr_id:
             body = (
+                "Hey there, just making sure we're not delving into some landscapes here...\n"
                 "🚫 Detected discouraged words (by lemma) in the abstract: "
                 + ", ".join(offenders)
                 + "\nPlease consider rephrasing."
@@ -87,6 +89,12 @@ def main() -> int:
     else:
         msg = "No violations found"
         print(msg)
+        if pr_id:
+            body = (
+                "Hey there, just making sure we're not delving into some landscapes here...\n"
+                "No violations found"
+            )
+            comment_on_pr(pr_id, body)
         return 0
 
 
