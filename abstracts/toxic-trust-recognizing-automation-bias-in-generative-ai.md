@@ -1,0 +1,3 @@
+Join us as we uncover the critical issue of automation bias in generative AI—a cognitive bias that leads us to blindly trust machine-generated content. This session will highlight the importance of recognizing this flaw, its potential to cause workplace errors, and practical strategies to heighten awareness and minimize bias, with real-world examples and a live demo addressing text, images, and code outputs.
+
+This talk is perfect for anyone curious about generative AI and its implications. Prepare to rethink your relationship with AI and become more conscious of the biases that may shape our interactions with technology.
