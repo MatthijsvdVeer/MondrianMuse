@@ -1,0 +1,3 @@
+In this engaging session, we will uncover the realities of ADHD in adults and tackle the common myths that surround neurodivergency. Discover the true statistics, explore why it may seem that everyone has ADHD, and gain insight into how life differs for neurodiverse individuals. We'll discuss actionable steps you can take if you suspect this applies to you, and clarify that neurodivergency is not an excuse for rudeness. Additionally, learn why diverse teams tend to outperform others.
+
+This talk is perfect for anyone interested in psychology, neuroscience, or the varied life experiences of individuals. Come prepared to gain knowledge that you can confidently share at your next dinner party!
