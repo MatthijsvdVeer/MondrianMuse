@@ -1,0 +1,3 @@
+Let's examine the growing concern over low-quality generative AI content and explore how we can build automated systems that produce high-quality output. You’ll learn to identify the signs of 'AI Slop' and implement strategies that counteract our automation bias, ensuring that the content we create meets the standards we expect. Using session abstract generation as a case study, I will provide practical guidelines to elevate the quality of your AI-generated content.
+
+This talk is designed for developers and IT professionals who are dedicated to improving the quality of AI-driven content in their organisations. Get ready to roll up your sleeves and discover how a little effort can lead to significant improvements in the content we create.
