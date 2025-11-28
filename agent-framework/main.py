@@ -3,10 +3,11 @@ from agent_framework.azure import AzureOpenAIChatClient
 from azure.identity import AzureCliCredential
 from agent_framework import WorkflowBuilder
 from agent_framework import ChatMessage, WorkflowOutputEvent, AgentRunUpdateEvent
-from agent_framework import Role
+from agent_framework import WorkflowViz
 from azure.identity import AzureCliCredential
 from executors.abstract_writer import AbstractWriteExecutor
 from executors.content_reviewer import ContentReviewer
+from domain.answers import Answers
 
 async def main():
     # 1) Create agents using AzureChatClient
@@ -23,12 +24,16 @@ async def main():
         .add_edge(abstractWriter, reviewer)
         .build())
 
+    # Add visualization
+    viz = WorkflowViz(workflow)
+    # Make Mermaid diagram and write to file
+    mermaid = viz.to_mermaid()
+    with open("workflow_diagram.md", "w") as f:
+        f.write(mermaid)
 
-    # Run the workflow with the user's initial message.
-    # For foundational clarity, use run (non streaming) and print the workflow output.
-    events = await workflow.run(
-        ChatMessage(role="user", text=
-                    """
+    # Make a new answer variable
+    answers = Answers()
+    answers.value = """
                     ### 1. Who do you think this talk is for?
                     
                     This talk is for developers and IT professionals who want to know how to help their companies create content of high quality
@@ -45,7 +50,12 @@ async def main():
                     
                     Title along the lines of: wrtite drunk edit sober: responsible generated content
                     The world is hard at work to include genAI generated content into our jobs, news items and private life. This AI-slop is easy to spot, but can we do better? I'll show ways to automate the generation of high-quality content, by putting in some old-fashioned elbow grease.
-                    """)
+                    """
+
+    # Run the workflow with the user's initial message.
+    # For foundational clarity, use run (non streaming) and print the workflow output.
+    events = await workflow.run(
+        answers
     )
     # The terminal node yields output; print its contents.
     outputs = events.get_outputs()

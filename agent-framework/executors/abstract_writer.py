@@ -8,6 +8,7 @@ from agent_framework import (
 )
 from pydantic import BaseModel, ConfigDict
 from domain.abstract import Abstract
+from domain.answers import Answers
 
 class AbstractWriteExecutor(Executor):
     """
@@ -115,7 +116,7 @@ class AbstractWriteExecutor(Executor):
         super().__init__(agent=self.agent, id=id)
         
     @handler
-    async def handle(self, message: ChatMessage, ctx: WorkflowContext[list[ChatMessage], str]) -> None:
+    async def handle(self, message: Answers, ctx: WorkflowContext[list[ChatMessage], Abstract]) -> None:
         """Generate content using the agent and forward the updated conversation.
 
         Contract for this handler:
@@ -128,13 +129,14 @@ class AbstractWriteExecutor(Executor):
         3) Forward the cumulative messages to the next executor with ctx.send_message.
         """
         # Start the conversation with the incoming user message.
-        messages: list[ChatMessage] = [message]
+        messages: list[ChatMessage] = [ChatMessage(role="user", text=message.value)]
         # Run the agent and extend the conversation with the agent's messages.
         response = await self.agent.run(messages, temperature=0.5, max_tokens=3000, response_format=Abstract)
         if isinstance(response.value, Abstract):
             abstract = response.value
+            await ctx.yield_output(abstract)
         
-        await ctx.yield_output(response.text)
+        
         
         messages.extend(response.messages)
         # Forward the accumulated messages to the next executor in the workflow.

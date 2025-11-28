@@ -1,0 +1,2 @@
+class Answers:
+    value: str
