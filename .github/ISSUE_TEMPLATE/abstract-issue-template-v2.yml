@@ -1,7 +1,7 @@
 name: Create a new session abstract (V2)
 description: Create me to create a new session abstract.
 title: "[Abstract]: "
-labels: ["abstractV2"]
+labels: ["abstract"]
 body:
   - type: textarea
     id: audience
