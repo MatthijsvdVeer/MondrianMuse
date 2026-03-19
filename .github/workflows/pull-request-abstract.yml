@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   check-user-access:
-    if: contains(github.event.issue.labels.*.name, 'abstractV2')
+    if: contains(github.event.issue.labels.*.name, 'abstract')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
