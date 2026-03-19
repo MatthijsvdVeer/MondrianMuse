@@ -4,4 +4,4 @@ The day kicks off with an introductory presentation that sets the stage for our 
 
 Prerequisites: Basic C# programming skills and a laptop with Visual Studio Code (or permission to install software). No prior experience in agent development is necessary.
 
-**What you'll walk away with:** A fully functional coding agent and the confidence to implement your own agents in future projects.
+What you'll walk away with: A fully functional coding agent and the confidence to implement your own agents in future projects.
