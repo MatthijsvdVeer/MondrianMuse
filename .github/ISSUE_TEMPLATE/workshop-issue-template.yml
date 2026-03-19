@@ -1,0 +1,61 @@
+name: Create a new workshop abstract
+description: Create me to create a new workshop abstract.
+title: "[Workshop]: "
+labels: ["workshop"]
+body:
+  - type: textarea
+    id: audience
+    attributes:
+      label: "1. Who do you think this workshop is for?"
+      description: Identify the target audience for this workshop.
+      placeholder: "Developers, Consultants, Data Scientists, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: learning_outcomes
+    attributes:
+      label: "2. What do you think you'll learn from this workshop?"
+      description: Describe what knowledge or skills you expect to gain.
+      placeholder: "This workshop will get you started with Azure OpenAI. You will learn how to use the API to generate text."
+    validations:
+      required: true
+  - type: textarea
+    id: accomplishments
+    attributes:
+      label: "3. What's something you'll be able to accomplish with the information gained from this workshop?"
+      description: Explain how you can apply the information from this workshop.
+      placeholder: "You will be able to generate text using the Azure OpenAI API."
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: "4. What do attendees need to know or bring before they can benefit from this?"
+      description: Describe any prerequisites, required tools, accounts, or prior knowledge.
+      placeholder: "Attendees should have basic Python knowledge and bring a laptop with VS Code installed. An Azure subscription is recommended."
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: "5. What is the concrete thing someone will have built or produced by the end?"
+      description: Describe the tangible outcome attendees will walk away with.
+      placeholder: "A working chatbot deployed to Azure that can answer questions about their own documents."
+    validations:
+      required: true
+  - type: textarea
+    id: structure
+    attributes:
+      label: "6. What does the structure of the day look like?"
+      description: Provide a rough outline of the workshop flow (morning/afternoon, topic list, etc.).
+      placeholder: "Morning: Introduction and setup. Afternoon: Hands-on building and deployment."
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: "7. What is the two-sentence summary of the workshop?"
+      description: Provide a brief summary of the workshop's content.
+      placeholder: "This workshop will introduce you to the Azure OpenAI API and guide you through building a complete application. By the end, you'll have a deployed solution you can continue developing."
+    validations:
+      required: true
