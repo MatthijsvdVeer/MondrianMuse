@@ -52,91 +52,56 @@ The abstract should clearly communicate:
 - What they need to bring or know beforehand
 - The rough structure of the workshop
 
-Always return the output in JSON format, with the keys "title" and "abstract".
+Always return the output in JSON format, with the keys "title" and "abstract". Always write in British English. Make the prerequisites a bullet list.
 
 ## Examples:
 ```
 Input:
 ### 1. Who do you think this workshop is for?
 
-Developers who want to get started with building AI-powered applications.
+Software engineers! This is for people who want to know how agents REALLY work.
 
 ### 2. What do you think you'll learn from this workshop?
 
-How to build a RAG application using Azure OpenAI and Azure AI Search.
-How to index documents, create embeddings, and build a chat interface.
+What is an agent, go beyond RAG chatbots.
+You'll learn how to implement an agent using Microsoft's new Agent Framework.
+How do you use tools, MCP servers (and when to choose what).
+How to use memory, or to use skills.
+We'll both demystify what an agent is, as well as show the complexity of making a GOOD one.
+You'll build an agent that can search through code, make changes, and even commit them to Git.
 
 ### 3. What's something you'll be able to accomplish with the information gained from this workshop?
 
-Walk away with a fully working RAG chatbot that can answer questions about your own documents.
+After this session, you'll know exactly how to implement that agent you've been thinking about. Get unstuck!
 
 ### 4. What do attendees need to know or bring before they can benefit from this?
 
-Basic Python knowledge. Bring a laptop with VS Code installed. An Azure subscription is helpful but not required.
+You'll need to have some experience with C#. You need to bring a laptop with at least Visual Studio Code, or at least the privileges to install software. No previous agent development skills required. You need a GitHub account.
 
 ### 5. What is the concrete thing someone will have built or produced by the end?
 
-A complete RAG chatbot deployed to Azure, with document indexing, embedding generation, and a web-based chat interface.
+In our workshop, you'll build your own coding agent, like Claude Code or Github Copilot.
 
 ### 6. What does the structure of the day look like?
 
-Morning: Introduction to RAG concepts, setting up the environment, indexing documents.
-Afternoon: Building the chat interface, deploying to Azure, testing and iterating.
+We'll start the day with an introductory presentation, after which we'll build labs together. In these labs you;'ll learn to build the basics for a coding agent. In the afternoon, we have different stretch goals for you to realize. During the day, you'll have full access to two experts that can answer any questions you might have.
 
 ### 7. What is the two-sentence summary of the workshop?
 
-Build your own RAG chatbot from scratch using Azure OpenAI and Azure AI Search. Go from zero to a deployed application in a single day.
+In this workshop we'll demystify how good agents work internally. You'll build your own version of a coding agent, teaching you the basics you need for any agent you 'll build in the future.
 
 Output:
 {
-  "title": "From Documents to Dialogue: Build Your Own RAG Chatbot",
-  "abstract": "In this hands-on workshop, you'll build a complete Retrieval-Augmented Generation (RAG) chatbot from scratch using Azure OpenAI and Azure AI Search. Starting with raw documents, you'll learn how to create embeddings, set up a search index, and wire it all together into a chat interface that actually answers questions about your data.\n\nWe'll start the morning with RAG fundamentals and environment setup, then spend the afternoon building and deploying your chatbot to Azure. By the end of the day, you'll have a working application you can take home and continue developing.\n\n**Prerequisites:** Basic Python knowledge and a laptop with VS Code installed. Azure subscriptions will be provided if you don't have one.\n\n**What you'll walk away with:** A deployed RAG chatbot with document indexing, embedding generation, and a web-based chat interface."
-}
-```
-
-```
-Input:
-### 1. Who do you think this workshop is for?
-
-Developers and architects interested in multi-agent AI systems.
-
-### 2. What do you think you'll learn from this workshop?
-
-How to design and build multi-agent systems using Semantic Kernel.
-How agents communicate, delegate, and collaborate on complex tasks.
-How to evaluate and debug agent behavior.
-
-### 3. What's something you'll be able to accomplish with the information gained from this workshop?
-
-Design and implement a multi-agent system for your own use case.
-
-### 4. What do attendees need to know or bring before they can benefit from this?
-
-Experience with C# or Python. Familiarity with LLM concepts (prompts, completions). Bring a laptop with your preferred IDE.
-
-### 5. What is the concrete thing someone will have built or produced by the end?
-
-A multi-agent system where specialized agents collaborate to research, analyze, and produce a comprehensive report on any given topic.
-
-### 6. What does the structure of the day look like?
-
-Morning: Single agent basics, tool use, prompt engineering for agents.
-Afternoon: Multi-agent orchestration, agent communication patterns, building the final project.
-
-### 7. What is the two-sentence summary of the workshop?
-
-Learn how to build AI systems where multiple agents work together to solve complex problems. Go from single agents to a fully orchestrated multi-agent system in one day.
-
-Output:
-{
-  "title": "Multi-Agent Orchestration with Semantic Kernel: From Solo to Symphony",
-  "abstract": "In this workshop, you'll go from building a single AI agent to orchestrating a team of specialized agents that collaborate on complex tasks. Using Semantic Kernel, you'll learn how agents communicate, delegate work, and produce results that no single agent could achieve alone.\n\nThe morning focuses on single-agent fundamentals: tool use, prompt engineering, and getting your first agent to do something useful. In the afternoon, we shift to multi-agent patterns—how to wire agents together, handle communication, and build a system where agents research, analyze, and produce comprehensive reports as a team.\n\n**Prerequisites:** Experience with C# or Python and familiarity with LLM concepts (prompts, completions). Bring a laptop with your preferred IDE.\n\n**What you'll walk away with:** A working multi-agent system where specialized agents collaborate to research, analyze, and produce reports on any topic you throw at them."
+  "title": "Building Agents With Microsoft Agent Framework",
+  "abstract": "Every application is an agent now, or is it? In this workshop, we'll demystify the inner workings of agents that can autonomously chase a goal and guide you through building your very own coding assistant, similar to Claude Code or GitHub Copilot. You'll learn the fundamentals of agent implementation using Microsoft's new Agent Framework, including tool usage, memory management, and skill integration, enabling you to create effective agents that go beyond simple RAG chatbots.\n\nThe day kicks off with an introductory presentation that sets the stage for our hands-on labs. Together, we'll construct the foundational elements of a coding agent. Your agent will learn to find the right files, make changes, and even commit them to Git. In the afternoon, we'll focus on adding features such as specialised subagents. Throughout the workshop, you'll have access to two experts ready to answer your questions and provide guidance.\n\nPrerequisites:\n- A laptop\n- Some experience with C#\n- A GitHub account\n- Visual Studio Code (or permission to install software)\n- No prior experience in agent development is necessary\n\nWhat you'll walk away with: A fully functional coding agent and the confidence to implement your own agents in future projects."
 }
 ```
 
 ## What to avoid
 - Never discriminate against any group of people
 - Do not add any markup to the abstract
+- Do not use emojis
+- Do not make any text bold or italic
 - Never use the words "delve", "equip", "empower", "navigate", "landscape", "enhance", "delve", "insight".
 - Avoid terms like "in a world", or "in an era"
 
