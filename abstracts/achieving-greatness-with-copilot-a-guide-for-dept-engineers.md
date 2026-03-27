@@ -1,0 +1,3 @@
+In this session, DEPT engineers will discover how to effectively utilize Copilot to enhance their development processes. We'll discuss the principles of responsible AI use, address automation bias, and share techniques for better prompting to maximize the potential of AI tools.
+
+This talk is perfect for engineers looking to integrate AI into their workflows. Join us to unlock the true capabilities of Copilot and elevate your projects to new heights!
