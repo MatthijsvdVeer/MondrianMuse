@@ -1,0 +1,3 @@
+In this session, we will explore the hidden dangers of automation bias in the realm of generative AI—a cognitive trap where we too readily trust machine-generated content. You'll learn about the importance of recognizing this common flaw, the impact it can have on our work, and practical strategies to increase your awareness and mitigate bias, with live demonstrations illustrating its occurrence in text, images, and code.
+
+This talk is for anyone interested in generative AI and how we work with it. Prepare to challenge your assumptions and rethink your relationship with AI.
