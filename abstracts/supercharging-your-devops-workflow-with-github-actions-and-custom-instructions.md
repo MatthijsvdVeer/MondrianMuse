@@ -1,0 +1,3 @@
+Join us for an insightful session where we'll explore the transformative role of agents like GitHub Copilot in your development process. Discover how to craft better custom instructions for GitHub Copilot, reduce feedback cycles for your Coding Agent, and speed up GitHub Actions to enhance your CI/CD pipelines. We'll share practical strategies to prevent mishaps in your codebase while ensuring your projects maintain functionality and security.
+
+This talk is tailored for DevOps Engineers, Software Developers, and AI Assisted Developers looking to optimize their workflows. You'll leave with actionable techniques to improve your existing processes and harness the full potential of GitHub Copilot to automate and verify your code changes effectively.
