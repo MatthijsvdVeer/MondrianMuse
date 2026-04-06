@@ -1,0 +1,3 @@
+In this session, we'll critically examine the limitations of language models when it comes to running business processes. You’ll discover the capabilities and shortcomings of large language models and the implications of using agents powered by these models. We will also discuss common workarounds proposed by tech vendors and explain why they fall short. By the end, you’ll walk away with a proven 3-step approach to effectively incorporate generative AI into your automation strategy.
+
+This talk is perfect for those interested in artificial intelligence, including developers and decision-makers looking to engage critically with the current hype around agents. Come ready to gain strong talking points for your next discussion about agentic workflows.
