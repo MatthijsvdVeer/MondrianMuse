@@ -1,0 +1,3 @@
+In this session, we will examine why LLM-based agents may not be the best fit for your business processes, despite the hype surrounding them. You’ll learn about the inherent capabilities and limitations of large language models, the common workarounds proposed by tech vendors, and why these solutions often miss the mark. By the end of the session, you'll walk away with a practical 3-step process for implementing automation with LLMs in a way that truly works.
+
+This talk is perfect for anyone interested in artificial intelligence, especially developers and decision-makers who want to engage critically with the current trends in AI. Be prepared to gather powerful insights that will fuel your next discussion about agentic workflows.
