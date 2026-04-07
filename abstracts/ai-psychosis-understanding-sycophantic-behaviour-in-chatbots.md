@@ -1,0 +1,3 @@
+In this thought-provoking session, we will explore the phenomenon of AI Psychosis—how certain AI applications can subtly distort a human's perception of reality. Discover the science behind this unsettling effect, the reasons chatbots exhibit sycophantic behaviour, and the critical role that emotional concepts in LLMs play. We will also discuss effective mitigation strategies to help you recognise and counteract the influence of such AI interactions.
+
+This talk is designed for anyone with an interest in AI, be they enthusiasts or critics. Prepare to gain insights that will empower you to identify the effects of sycophantic LLM behaviour and safeguard your perception of reality.
