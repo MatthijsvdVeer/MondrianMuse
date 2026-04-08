@@ -1,0 +1,3 @@
+Join us for a deep dive into the wicked problem of climate change, exploring the psychological barriers that hinder collective behavior change. This session will introduce IKEA's behavior change framework and its innovative approach to tackling the challenges of environmental psychology and mobilizing action. You'll gain insights into why understanding these psychological aspects is crucial and how they can help shape effective responses to climate issues.
+
+Ideal for anyone in digital with an interest in environmental psychology, including product owners, designers, engineers, and data professionals. Leave with a clearer understanding of the complexities of climate action and the frameworks that can drive meaningful change.
