@@ -1,0 +1,3 @@
+In this session, discover the intriguing concept of the Reverse Centaur—a phenomenon where technology inadvertently turns humans into bottlenecks rather than empowering them. We'll explore the dangers of this trend, how it relates to the automation theory coined by Cory Doctorow, and why centaurs, who leverage technology to enhance human efficiency, are the better path forward. You'll gain insights into identifying reverse centaurs in your work and learn strategies to create software that truly supports human capability rather than undermines it.
+
+This talk is aimed at Developers, IT Decision Makers, and Managers. Join us to ensure your software design prioritises human efficiency and avoids the pitfalls of automation that replace rather than assist.
